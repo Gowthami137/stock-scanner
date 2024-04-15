@@ -1,0 +1,21 @@
+{% extends "loginAdminView.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminView.css') }}">
+<table class="table table-dark">
+    <thead>
+        <tr>
+          <td scope="col">Username</td>
+          <th scope="col">Password</th>
+          <th scope="col">Permissions</th>
+        </tr>
+      </thead>
+    {% for user in userDetails %}
+      <tr>
+        <td>{{user[0]}}</td>
+        <td>{{user[1]}}</td>
+        <td>{{user[2]}}</td>
+      </tr>
+      {% endfor %}
+  </table>
+  <button type="button" id="backtoAdminButton" class="btn btn-secondary">Back to Admin Page</button>
+  <script src="{{ url_for('static', filename='usersShow.js') }}"></script>
+{% endblock content %}

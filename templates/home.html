@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container d-flex flex-column justify-content-center align-items-center">
+    <h2 class="mt-4 mb-4">Welcome to the Market Overview</h2>
+    <!-- TradingView Widget BEGIN -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright">
+                    <a href="https://www.tradingview.com/markets/" rel="noopener" target="_blank">
+                        <span class="blue-text">Financial Markets</span>
+                    </a> by TradingView
+                </div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                    {
+                    "colorTheme": "dark",
+                    "dateRange": "1M",
+                    "showChart": true,
+                    "locale": "en",
+                    "largeChartUrl": "",
+                    "isTransparent": false,
+                    "showSymbolLogo": true,
+                    "showFloatingTooltip": true,
+                    "width": "100%",
+                    "height": "660",
+                    "plotLineColorGrowing": "rgba(106, 168, 79, 1)",
+                    "plotLineColorFalling": "rgba(255, 0, 0, 1)",
+                    "gridLineColor": "rgba(240, 243, 250, 0)",
+                    "scaleFontColor": "rgba(120, 123, 134, 1)",
+                    "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+                    "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                    "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+                    "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                    "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+                    "tabs": [
+                    {
+                        "title": "Indices",
+                        "symbols": [
+                            {"s": "BINANCE:BTCUSDT", "d": "Bitcoin"},
+                            {"s": "NASDAQ:MSFT", "d": "Microsoft"},
+                            {"s": "NASDAQ:TSLA", "d": "Tesla"},
+                            {"s": "NASDAQ:AAPL", "d": "Apple"}
+                        ],
+                        "originalTitle": "Indices"
+                    },
+                    {
+                        "title": "Futures",
+                        "symbols": [
+                            {"s": "CME_MINI:ES1!", "d": "S&P 500"},
+                            {"s": "CME:6E1!", "d": "Euro"},
+                            {"s": "COMEX:GC1!", "d": "Gold"},
+                            {"s": "NYMEX:CL1!", "d": "Crude Oil"},
+                            {"s": "NYMEX:NG1!", "d": "Natural Gas"},
+                            {"s": "CBOT:ZC1!", "d": "Corn"}
+                        ],
+                        "originalTitle": "Futures"
+                    },
+                    {
+                        "title": "Bonds",
+                        "symbols": [
+                            {"s": "CME:GE1!", "d": "Eurodollar"},
+                            {"s": "CBOT:ZB1!", "d": "T-Bond"},
+                            {"s": "CBOT:UB1!", "d": "Ultra T-Bond"},
+                            {"s": "EUREX:FGBL1!", "d": "Euro Bund"},
+                            {"s": "EUREX:FBTP1!", "d": "Euro BTP"},
+                            {"s": "EUREX:FGBM1!", "d": "Euro BOBL"}
+                        ],
+                        "originalTitle": "Bonds"
+                    },
+                    {
+                        "title": "Forex",
+                        "symbols": [
+                            {"s": "FX:EURUSD"},
+                            {"s": "FX:GBPUSD"},
+                            {"s": "FX:USDJPY"},
+                            {"s": "FX:USDCHF"},
+                            {"s": "FX:AUDUSD"},
+                            {"s": "FX:USDCAD"}
+                        ],
+                        "originalTitle": "Forex"
+                    }
+                    ]
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div id="tradingview_04735"></div>
+                <div class="tradingview-widget-copyright">
+                    <a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank">
+                        <span class="blue-text">AAPL Chart</span>
+                    </a> by TradingView
+                </div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget(
+                {
+                "width": "100%",
+                "height": "610",
+                "symbol": "NASDAQ:AAPL",
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": true,
+                "allow_symbol_change": true,
+                "details": true,
+                "calendar": true,
+                "container_id": "tradingview_04735"
+                }
+                );
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+    </div>
+</div>
+{% endblock content %}

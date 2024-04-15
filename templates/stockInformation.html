@@ -1,0 +1,123 @@
+{% extends "loginedview.html" %}
+{% block content %}
+    <a href="{{ url_for('showStocks') }}" class="previous">&laquo; Back to Stocks</a><br>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stockInformation.css') }}">
+    {% if stockDetails %}
+
+        <section class="card-group">
+            <div class="card">
+
+                <img class="card-img-top" src="/static/{{ stockDetails[1] }}.png" alt="Card image cap">
+                Click To add Stock to Your Watchlist
+                <form method="post" action="{{ url_for('showWatchlist') }}">
+                    <input type="submit" class="btn btn-primary"
+                           value="{{ stockDetails[0] }}" name="postStock"/><br>
+                </form>
+
+            </div>
+            </br>
+
+        </section>
+
+        <div id="Stocks">
+            <span class="Symbol"><p class="Label">{{ stockDetails[10] }}: {{ stockDetails[0] }} </p><br/></span>
+            <span class="Stockitem"><p class="Label">Current Price: ${{ stockDetails[9] }} USD </p></span>
+            <span class="Stockitem"><p class="Label">Predicted Stock Price: ${{ stockDetails[3] }} USD</p></span>
+            <span class="Stockitem"><p class="Label">Strong Buy: {{ stockDetails[4] }} </p></span>
+            <span class="Stockitem"><p class="Label">Strong Sell: {{ stockDetails[7] }} </p></span>
+            <span class="Stockitem"><p class="Label">Rating Buy: {{ stockDetails[5] }} </p></span>
+            <span class="Stockitem"><p class="Label">Rating Sell: {{ stockDetails[6] }} </p></span>
+            <span class="Stockitem"><p class="Label">Rating Hold: {{ stockDetails[8] }} </p></span><br><br>
+           <span class="Stockitem"><p class="Label">Analysts:
+            {% if analystDetails %}
+                    {% for item in analystDetails %}
+                        {{ item[2] }}
+                        {%- if not loop.last -%}
+                            ,
+                        {% endif %} {% endfor %}
+            {% else %}
+                No Analysts for this Stock
+            {% endif %}
+            </p></span>
+        </div>
+
+
+        <section class="recentNews">
+            {% if prDetails %}
+                <div class="container">
+                    <h2 class="news-title">Recent News</h2>
+                    <div class="row">
+                        <div class="ct-blog col-sm-6 col-md-4">
+                            <div class="inner">
+                                <div class="fauxcrop">
+
+
+                                </div>
+                                <div class="ct-blog-content">
+                                    <div class="ct-blog-date">
+                                        <span>{{ dateDetails[0][4] }}</span><br>
+                                    </div>
+                                    <h3 class="ct-blog-header">
+                                        <a href="https://www.washingtonpost.com/technology/2021/11/26/ios-privacy-settings/">{{ prDetails[0][2] }}</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ct-blog col-sm-6 col-md-4">
+                            <div class="inner">
+                                <div class="fauxcrop">
+                                </div>
+                                <div class="ct-blog-content">
+                                    {% if prDetails is defined and prDetails[1] is defined %}
+                                        <div class="ct-blog-date">
+                                            <span>{{ dateDetails[1][4] }}</span><br>
+                                        </div>
+                                        <h3 class="ct-blog-header">
+                                        <a href="https://www.apple.com/newsroom/2021/11/apple-sues-nso-group-to-curb-the-abuse-of-state-sponsored-spyware/">
+
+                                        {{ prDetails[1][2] }}
+                                    {% endif %}</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ct-blog col-sm-6 col-md-4">
+                            <div class="inner">
+                                <div class="fauxcrop">
+                                </div>
+                                <div class="ct-blog-content">
+                                    <div class="ct-blog-date">
+                                        {% if prDetails is defined and prDetails[2] is defined %}
+                                            <span>{{ dateDetails[2][4] }}</span><br>
+                                            </div>
+                                            <h3 class="ct-blog-header">
+                                            <a href="https://www.fool.com/investing/2021/11/26/why-apple-stock-got-bit-today/">
+                                            {{ prDetails[2][2] }}
+                                        {% endif %}</a>
+                                        </h3>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="ct-blog">
+                    <div class="inner-noNews">
+                        <p class="ct-blog-header-noNews">
+                            There Are No Recent News Articles for this Stock
+                        </p>
+                    </div>
+
+                </div>
+
+            {% endif %}
+        </section>
+
+    {% else %}
+        <span class="NoStock"><p class="Label"> This Stock Does Not Exist, Please contact Admin to add Stock</p></span>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends proView.html %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pr.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,700|Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <main class="main-article" role="main">
+
+        <article class="article">
+          {% for headline in prDetails1 %}
+          {% if loop.index == 1%}
+            <h2>{{headline[0]}}</h2>
+            {% endif %}
+          {% endfor %}
+          <p><small>Wednesday, November 24th</small><br> By Abhay Khosla</p>
+          <figure>
+            <img src="/static/SurfacePro7.png" alt="Micrsoft Surface Pro 7" width = 500px>
+            <figcaption>Micrsoft Surface Pro 7</figcaption>
+          </figure>
+                      
+          <p class="intro-text">Yes, ladies and gents, you can shave the equivalent of the latest iPad Air's starting price off the MSRP of an absolutely bonkers Surface Pro 7 configuration with Intel Core i7 inside, as well as 16 gigs of RAM and a hefty 512GB SSD.
+            Of course, not everyone can afford to spend $1,299 on a new Windows slate (with no keyboard cover included) before Christmas, so why not cough up $600 on top of that for a similar device with an even more impressive 1TB SSD at Microsoft after a comparatively humble $400 markdown?
+            If that doesn't sound possible on account of not having won the lottery this year, Best Buy might have a much better shot at enticing you to pay $699.99 instead of $899.99 for a Core i5 Surface Pro 7 variant with an 8GB memory count and small but speedy 128GB SSD.
+            Last but certainly not least, both Best Buy and the official Microsoft US e-store have a 256GB SSD version of the Surface Pro 7 powerhouse with Intel Core i5 inside and 8 gigs of RAM on sale at $799.99 at the time of this writing after a deep $400 price cut of its own.</p>
+          </p>
+          {% for headline in prDetails1 %}
+          {% if loop.index == 3%}
+            <h2>{{headline[0]}}</h2>
+            {% endif %}
+          {% endfor %}
+          <p><small>Wednesday, November 24th</small><br> By Abhay Khosla</p>
+          <figure>
+            <img src="/static/TeslaCar.jpg" alt="Tesla Car" width = 500px>
+            <figcaption>Tesla Sedan Model</figcaption>
+          </figure>
+                      
+          <p class="intro-text">Dan Ives from Wedbush, one of the top 10 ranked stock analysts in the world, has increased his price target on Tesla’s stock (TSLA) as he believes the automaker will take a significant part of the growing EV market.
+            In a new note to clients today, Wedbush announced that it is increasing its price target on Tesla from $1,100 per share to $1,400. 
+            It’s a new market high price target on Wall Street for Tesla.Dan Ives, the analyst covering Tesla for Wedbush, commented on the price target increase.</p>
+          </p>
+          
+          {% for headline in prDetails1 %}
+          {% if loop.index == 2%}
+            <h2>{{headline[0]}}</h2>
+            {% endif %}
+          {% endfor %}
+          <p><small>Tuesday, December 14th</small><br> By Abhay Khosla</p>
+          <figure>
+            <img src="/static/TDBank.jpg" alt="TD Bank Image" width = 500px>
+            <figcaption>TD Bank in Toronto</figcaption>
+          </figure>
+                      
+          <p class="intro-text">With the environment and diversity and inclusion two of the most important focuses for businesses, TD Bank has brought the two together in a Canadian first.
+            The bank has closed a three-year US$500 million green bond through a syndicate led by minority-, women- and veteran-owned business enterprises (MWVBEs) as active joint bookrunners.
+            "TD is proud to engage an underwriting team that includes minority-, women- and veteran-owned business enterprises as Active Joint Bookrunners, fostering greater inclusion and promoting progress," said Barbara Hooper, senior EVP, Treasury, Corporate Development, Strategic Sourcing and Real Estate, TD Bank Group. "Through this model, TD is able to benefit from the diverse and vast capabilities of these firms, while building on our longstanding commitment to sustainable finance."</p>
+          </p>
+      </main> 
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "loginAdminView.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminView.css') }}">
+<table class="table table-dark">
+    <thead>
+        <tr>
+          <td scope="col">Analyst ID Number</td>
+          <th scope="col">Stock ID</th>
+          <th scope="col">Analyst Name</th>
+          <th scope="col">Analyst Company</th>
+        </tr>
+      </thead>
+    {% for analyst in analystDetails %}
+      <tr>
+        <td>{{analyst[0]}}</td>
+        <td>{{analyst[1]}}</td>
+        <td>{{analyst[2]}}</td>
+        <td>{{analyst[3]}}</td>
+      </tr>
+      {% endfor %}
+  </table>
+  <button type="button" id="backtoAdminButton" class="btn btn-secondary">Back to Admin Page</button>
+  <script src="{{ url_for('static', filename='usersShow.js') }}"></script>
+{% endblock content %}

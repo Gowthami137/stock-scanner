@@ -1,0 +1,51 @@
+{% extends "loginAdminView.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='generalButton.css') }}">
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Update an user in the system</legend>
+      <div class="form-group">
+        {{ form.username.label(class = "form-control-label") }} 
+        
+        {% if form.username.errors %}
+            {{ form.username(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.username.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.username(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.password.label(class = "form-control-label") }} 
+        {% if form.password.errors %}
+            {{ form.password(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.password(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+          <input type="radio" id="private" name="user_type" value="Private">
+          <label for="private">Private</label><br>
+          <input type="radio" id="professional" name="user_type" value="Professional">
+          <label for="professional">Professional</label><br>
+          <input type="radio" id="admin" name="user_type" value="Admin">
+          <label for="admin">Admin</label>     
+    </div> 
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit(class = "btn btn-outline-info") }}
+    </div>
+    <button type="button" id="backtoAdminButton" class="btn btn-secondary">Back to Admin Page</button>
+  </form>
+  <script src="{{ url_for('static', filename='usersShow.js') }}"></script>
+</div>
+{% endblock content %}

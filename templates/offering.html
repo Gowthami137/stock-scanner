@@ -1,0 +1,15 @@
+{% extends "proView.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminView.css') }}">
+<body>
+    <p>Welcome to the Professional View</p>
+    <h4>Offering</h4>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" id="createOfferingButton" class="btn btn-secondary">Create an Offering</button>
+        <button type="button" id="deleteOfferingButton" class="btn btn-secondary">Delete an Offering</button>
+        <button type="button" id="updateOfferingButton" class="btn btn-secondary">Update an Offering</button>
+        <button type="button" id="showAllOfferingButton" class="btn btn-secondary">Show all Offering</button>
+    </div>
+    <script src="{{ url_for('static', filename='pro.js') }}"></script>
+</body>
+{% endblock %}

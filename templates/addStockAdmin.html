@@ -1,0 +1,173 @@
+{% extends "loginAdminView.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='generalButton.css') }}">
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Add a Stock into the system</legend>
+      <div class="form-group">
+        {{ form.stock_id.label(class = "form-control-label") }} 
+        
+        {% if form.stock_id.errors %}
+            {{ form.stock_id(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.stock_id.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.stock_id(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.company_id.label(class = "form-control-label") }} 
+        {% if form.company_id.errors %}
+            {{ form.company_id(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.company_id.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.company_id(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.prediction_id.label(class = "form-control-label") }} 
+        {% if form.prediction_id.errors %}
+            {{ form.prediction_id(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.prediction_id.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.prediction_id(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.predict_stock_price.label(class = "form-control-label") }} 
+        {% if form.predict_stock_price.errors %}
+            {{ form.predict_stock_price(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.predict_stock_price.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.predict_stock_price(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.strong_buy.label(class = "form-control-label") }} 
+        {% if form.strong_buy.errors %}
+            {{ form.strong_buy(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.strong_buy.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.strong_buy(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.rating_buy.label(class = "form-control-label") }} 
+        {% if form.rating_buy.errors %}
+            {{ form.rating_buy(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.rating_buy.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.rating_buy(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.rating_sell.label(class = "form-control-label") }} 
+        {% if form.rating_sell.errors %}
+            {{ form.rating_sell(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.rating_sell.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.rating_sell(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.strong_sell.label(class = "form-control-label") }} 
+        {% if form.strong_sell.errors %}
+            {{ form.strong_sell(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.strong_sell.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.strong_sell(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.rating_hold.label(class = "form-control-label") }} 
+        {% if form.rating_hold.errors %}
+            {{ form.rating_hold(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.rating_hold.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.rating_hold(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.stock_price.label(class = "form-control-label") }} 
+        {% if form.stock_price.errors %}
+            {{ form.stock_price(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.stock_price.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.stock_price(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.sector.label(class = "form-control-label") }} 
+        {% if form.sector.errors %}
+            {{ form.sector(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.sector.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.sector(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.belongs_to.label(class = "form-control-label") }} 
+        {% if form.belongs_to.errors %}
+            {{ form.belongs_to(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.belongs_to.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.belongs_to(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit(class = "btn btn-outline-info") }}
+    </div>
+    <button type="button" id="backtoAdminButton" class="btn btn-secondary">Back to Admin Page</button>
+  </form>
+  <script src="{{ url_for('static', filename='usersShow.js') }}"></script>
+</div>
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends "loginAdminView.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminView.css') }}">
+  <body>
+    <p>Welcome to the Admin View, here you can control the system to your liking.</p>
+    <h4>Users</h4>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" id="createUserButton" class="btn btn-secondary">Create a User</button>
+      <button type="button" id="deleteUserButton" class="btn btn-secondary">Delete a User</button>
+      <button type="button" id="updateUserButton" class="btn btn-secondary">Update a User</button>
+      <button type="button" id="showAllUserButton" class="btn btn-secondary">Show all Users</button>
+    </div>
+    
+    <h4>Stocks</h4>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" id="createStockButton" class="btn btn-secondary">Create a Stock</button>
+      <button type="button" id="deleteStockButton" class="btn btn-secondary">Delete a Stock</button>
+      <button type="button" id="updateStockButton" class="btn btn-secondary">Update a Stock</button>
+      <button type="button" id="showAllStockButton" class="btn btn-secondary">Show all Stocks</button>
+    </div>
+    
+    <h4>Exchanges</h4>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" id="createExchangeButton" class="btn btn-secondary">Create a Exchange</button>
+      <button type="button" id="deleteExchangeButton" class="btn btn-secondary">Delete a Exchange</button>
+      <button type="button" id="updateExchangeButton" class="btn btn-secondary">Update a Exchange</button>
+      <button type="button" id="showAllExchangeButton" class="btn btn-secondary">Show all Exchanges</button>
+    </div>
+
+    <h4>Business</h4>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" id="createBusinessButton" class="btn btn-secondary">Create a Business</button>
+      <button type="button"  id="deleteBusinessButton" class="btn btn-secondary">Delete a Business</button>
+      <button type="button" id="updateBusinessButton" class="btn btn-secondary">Update a Business</button>
+      <button type="button" id="showAllBusinessButton" class="btn btn-secondary">Show all Business</button>
+    </div>
+
+    <h4>Analysts</h4>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" id="createAnalystButton" class="btn btn-secondary">Create a Analyst</button>
+      <button type="button" id="deleteAnalystButton" class="btn btn-secondary">Delete a Analyst</button>
+      <button type="button" id="updateAnalystButton" class="btn btn-secondary">Update a Analyst</button>
+      <button type="button" id="showAllAnalystButton" class="btn btn-secondary">Show all Analysts</button>
+    </div>
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+  </body>
+{% endblock %}

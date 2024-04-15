@@ -1,0 +1,95 @@
+{% extends "loginedview.html" %} 
+{% block content %}
+<h1 style="color:rgb(18, 133, 209);">Events Details</h1>
+<br>
+    {% for event in eventDetails1 %}
+        <h2 style="color:rgb(199, 73, 126);">Event ID: {{event[0]}}</h2>
+        <p>Date: {{event[4]}}, Time: {{event[3]}}</p>
+    <h3 style="color:green;">User Sentiment</h3>
+    <p style="color:green;">Bearish Sentiment: {{event[5]}}, Neutal Sentiment: {{event[6]}}, Bullish Sentiment: {{event[7]}}</p>
+    <h3 style="color:green;">Price Change: {{event[8]}}</h3>
+    {% if loop.index == 1%}
+        <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/technicals/" rel="noopener" target="_blank"><span class="blue-text">Technical Analysis for AAPL</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+    {
+    "interval": "5m",
+    "width": 425,
+    "isTransparent": false,
+    "height": 450,
+    "symbol": "NASDAQ:AAPL",
+    "showIntervalTabs": true,
+    "locale": "en",
+    "colorTheme": "dark"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+    {% endif %}
+    {% if loop.index == 2%}
+    <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-MSFT/technicals/" rel="noopener" target="_blank"><span class="blue-text">Technical Analysis for MSFT</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+    {
+    "interval": "5m",
+    "width": 425,
+    "isTransparent": false,
+    "height": 450,
+    "symbol": "NASDAQ:MSFT",
+    "showIntervalTabs": true,
+    "locale": "en",
+    "colorTheme": "dark"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+    {% endif %}
+    {% if loop.index == 3%}
+    <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TSX-TD/technicals/" rel="noopener" target="_blank"><span class="blue-text">Technical Analysis for TD</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+    {
+    "interval": "5m",
+    "width": 425,
+    "isTransparent": false,
+    "height": 450,
+    "symbol": "TSX:TD",
+    "showIntervalTabs": true,
+    "locale": "en",
+    "colorTheme": "dark"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+    {% endif %}
+    {% if loop.index == 4%}
+   <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-TSLA/technicals/" rel="noopener" target="_blank"><span class="blue-text">Technical Analysis for TSLA</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+    {
+    "interval": "5m",
+    "width": 425,
+    "isTransparent": false,
+    "height": 450,
+    "symbol": "NASDAQ:TSLA",
+    "showIntervalTabs": true,
+    "locale": "en",
+    "colorTheme": "dark"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+    {% endif %}
+    <br>
+    <br>
+    {% endfor %}
+
+{% endblock %}

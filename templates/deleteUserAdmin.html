@@ -1,0 +1,30 @@
+{% extends "loginAdminView.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='generalButton.css') }}">
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Delete a user from the system</legend>
+      <div class="form-group">
+        {{ form.username.label(class = "form-control-label") }} 
+        
+        {% if form.username.errors %}
+            {{ form.username(class = "form-control-lg is-invalid") }}  
+                <div class="invalid-feedback">
+                    {% for errors in form.username.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+        {% else %}
+            {{ form.username(class = "form-control-lg") }}    
+        {% endif %}
+      </div>
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit(class = "btn btn-outline-info", value="Delete User") }}
+    </div>
+    <button type="button" id="backtoAdminButton" class="btn btn-secondary">Back to Admin Page</button>
+  </form>
+  <script src="{{ url_for('static', filename='usersShow.js') }}"></script>
+</div>
+{% endblock content %}

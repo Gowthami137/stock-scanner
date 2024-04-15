@@ -1,0 +1,21 @@
+{% extends "loginAdminView.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminView.css') }}">
+<table class="table table-dark">
+    <thead>
+        <tr>
+          <td scope="col">Name</td>
+          <th scope="col">Location</th>
+          <th scope="col">Number of Tickers</th>
+        </tr>
+      </thead>
+    {% for exchange in exchangeDetails %}
+      <tr>
+        <td>{{exchange[0]}}</td>
+        <td>{{exchange[1]}}</td>
+        <td>{{exchange[2]}}</td>
+      </tr>
+      {% endfor %}
+  </table>
+  <button type="button" id="backtoAdminButton" class="btn btn-secondary">Back to Admin Page</button>
+  <script src="{{ url_for('static', filename='usersShow.js') }}"></script>
+{% endblock content %}

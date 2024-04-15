@@ -1,0 +1,160 @@
+/*https://www.solodev.com/blog/web-design/adding-recent-news-boxes-to-your-website.stml*/
+/*Use this website to create the CSS for the news section*/
+
+html { height: 100%; }
+
+a:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.previous {
+  background-color: #007bff;
+  color: white;
+  display: inline-block;
+  padding: 10px;
+    border-radius: 10px;
+}
+
+
+body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  background: #eee;
+}
+.card-img-top {
+    width: 50%;
+    padding: 20px;
+}
+.card{
+  align-items: center;
+    padding-bottom: 20px;
+}
+
+.NoStock{
+    text-align: center;
+     font-size: 20px;
+}
+#Stocks {
+  display: block;
+  min-height: 1em;
+  background: steelblue;
+  color: white;
+  padding: 20px;
+    cursor: default;
+  vertical-align: middle;
+  line-height: 1.4;
+  text-align: center;
+  transform: translateZ(0);
+  font-size: 30px;
+  font-family: "Roboto", Helvetica;
+}
+
+#Stocks b { font-weight: 300; }
+#Stocks i { font-style: normal; }
+
+#Stocks .Name,
+#Stocks .Label,
+#Stocks .LastUpdated { font-size: 0.7em; line-height: 1; }
+
+#Stocks span {
+  white-space: nowrap;
+  display: block;
+  padding: 0 5px;
+    text-align: left;
+    padding-left: 240px;
+
+    white-space:nowrap;
+}​
+
+#Stocks .Symbol
+#Stocks .Stockitem{
+    background: #3B666B;
+ }
+
+#Stocks .Stat { color: white; }
+
+.no-js #Stocks { display: none; }
+
+.arow{
+    text-align:center;
+}
+.recentNews {
+    background-color: steelblue;
+}
+.recentNews .news-title {
+    text-align:center;
+    padding-top:30px;
+    padding-bottom:30px;
+    font-family: 'nimbus-sans-condensed', sans-serif;
+    font-size:35px;
+    font-weight: bold;
+    color: #fff;
+}
+.recentNews .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.recentNews .ct-blog {
+    margin-bottom: 30px;
+}
+.ct-blog .inner {
+    background-color: #FFF;
+    padding: 10px;
+    transition: all 0.2s ease-in-out 0s;
+    cursor: pointer;
+    height: 100%;
+}
+.ct-blog .inner:hover {
+    background-color: #e6e6e6;
+}
+.ct-blog .fauxcrop img {
+    width: 100%;
+}
+
+.ct-blog-content .ct-blog-date span {
+    font-size: 16px;
+    color: rgb(20, 117, 175);
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+.ct-blog-content .ct-blog-date strong {
+    font-size: 25px;
+    color: rgb(20, 117, 175);
+}
+a {
+  color: black;
+}
+.ct-blog-content .ct-blog-header {
+    color: #000;
+    display: table-cell;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 1.1;
+    padding: 0 20px;
+    vertical-align: top;
+}
+.ct-blog-header-noNews {
+    color: #000;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 2;
+    vertical-align: top;
+    horiz-align: center; !important;
+}
+.ct-blog .inner-noNews {
+    background-color: #FFF;
+    padding: 10px;
+    height: 100%;
+    horiz-align: center;
+}
+
+

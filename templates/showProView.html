@@ -1,0 +1,55 @@
+{% extends "proView.html" %} 
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='showStocks.css') }}">
+<h1 class="title">
+  Welcome, {{username}}!
+</h1>
+<p>Here are the stocks currently on our website</p>
+
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="/static/AAPL.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">AAPL</h5>
+      <p class="card-text">Apple Inc. is an American multinational technology company that specializes in consumer electronics, computer software and online services.</p>
+    </div>
+    <a href="{{ url_for('showStockInformation', ID = 'AAPL.NASDAQ') }}" class="btn btn-primary">View Stock Information</a>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="/static/TSLA.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">TSLA</h5>
+      <p class="card-text">Tesla, Inc. is an American electric vehicle and clean energy company based in Austin, Texas, United States.</p>
+    </div>
+    <a href="{{ url_for('showStockInformation', ID = 'TSLA.NASDAQ')}}" class="btn btn-primary">View Stock Information</a>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="/static/TD.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">TD</h5>
+      <p class="card-text">The Toronto-Dominion Bank is a Canadian multinational banking and financial services corporation headquartered in Toronto, Ontario.</p>
+    </div>
+    <a href="{{ url_for('showStockInformation', ID = 'TD.TSE')}}" class="btn btn-primary">View Stock Information</a>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="/static/MSFT.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">MSFT</h5>
+      <p class="card-text">Microsoft Corporation is an American multinational technology corporation which produces computer software, consumer electronics, personal computers, and related services.</p>
+    </div>
+    <a href="{{ url_for('showStockInformation', ID = 'MSFT.NASDAQ')}}" class="btn btn-primary">View Stock Information</a>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</div>
+{% endblock %}

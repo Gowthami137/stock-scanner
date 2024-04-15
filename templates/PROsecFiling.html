@@ -1,0 +1,24 @@
+{% extends proView.html %}
+{% block content %}
+<h1 style="color:rgb(18, 133, 209);">SEC Filing Page</h1>
+<br>
+    {% for sec in secFilingDetails %}
+        <h2 style="color:rgb(199, 73, 126);">Event ID: {{sec[0]}}</h2>
+        <p>Prediction ID: {{sec[1]}}, Predict SEC Filing: {{sec[3]}}</p>
+        {% if loop.index == 1%}
+        <p>Business: AAPL</p>
+        {% endif %}
+        {% if loop.index == 2%}
+        <p>Business: MSFT</p>
+        {% endif %}
+        {% if loop.index == 3%}
+        <p>Business: TD</p>
+        {% endif %}
+        {% if loop.index == 4%}
+        <p>Business: TSLA</p>
+        {% endif %}
+    <h4 style="color:rgb(189, 75, 46);">Type of SEC Filing: </h4>
+    <p style="color:rgb(189, 75, 46);">{{sec[2]}}</p>
+    <br>
+    {% endfor %}
+{% endblock %}
